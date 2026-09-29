@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0879d1">
+<meta name="description" content="Destino Seguro: orientación durante emergencias.">
+<title>Destino Seguro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+<header>
+  <div class="brand-icon">🏠</div>
+  <div>
+    <b>DESTINO SEGURO</b>
+    <small>Tu camino seguro en emergencias</small>
+  </div>
+  <button id="topMenu">☰</button>
+</header>
+
+<main>
+
+<section id="inicio" class="screen active">
+  <div class="hero">
+    <div class="pin">🏠</div>
+    <h1>DESTINO<br><span>SEGURO</span></h1>
+    <p>Información y orientación para encontrar lugares seguros durante una emergencia.</p>
+  </div>
+
+  <button class="primary" data-go="mapa">COMENZAR ➜</button>
+
+  <div class="card">
+    <p>🚨 <b>Evita zonas de riesgo</b></p>
+    <p>🛣️ <b>Encuentra rutas alternativas</b></p>
+    <p>🏠 <b>Encuentra puntos seguros</b></p>
+    <p>📵 <b>Consulta información sin internet</b></p>
+  </div>
+</section>
+
+<section id="mapa" class="screen">
+  <h2>🗺️ Mapa de zonas de riesgo</h2>
+
+  <div class="search">
+    <input id="destination" placeholder="¿A dónde quieres ir?">
+    <button id="searchBtn">🔍</button>
+  </div>
+
+  <div class="map">
+    <div class="water">🌊</div>
+    <div class="danger a">⚠️</div>
+    <div class="danger b">⚠️</div>
+    <div class="route">●━━━━━━━●</div>
+    <div class="help">✚</div>
+    <div class="home">🏠</div>
+  </div>
+
+  <div class="legend">
+    <span>🟢 Ruta segura</span>
+    <span>🔴 Zona de riesgo</span>
+    <span>🌊 Calle inundada</span>
+    <span>🏠 Punto de ayuda</span>
+  </div>
+
+  <button class="primary" data-go="ruta">ENCONTRAR RUTA SEGURA</button>
+  <button class="secondary" data-go="alerta">Ver ejemplo de alerta</button>
+</section>
+
+<section id="ruta" class="screen">
+  <button class="back" data-go="mapa">← Volver al mapa</button>
+
+  <div class="success">
+    <div class="check">✓</div>
+    <h2>Ruta segura encontrada</h2>
+    <p>Ruta de ejemplo que evita zonas de riesgo conocidas.</p>
+  </div>
+
+  <div class="card">
+    <p>📍 <b>Desde:</b> Mi ubicación</p>
+    <p>🏁 <b>Hasta:</b> Punto seguro</p>
+    <p>🛣️ <b>Distancia:</b> 1.8 km</p>
+    <p>⏱️ <b>Tiempo:</b> 25 min</p>
+  </div>
+
+  <div class="mini-map">⚠️　　　　　　　　 🏠<div class="mini-route"></div></div>
+
+  <button class="primary" id="startRoute">➤ INICIAR RUTA</button>
+</section>
+
+<section id="alerta" class="screen">
+  <div class="alert">
+    <div class="alert-icon">!</div>
+    <h2>ALERTA</h2>
+    <p>Se ha detectado una zona de riesgo en la ruta de ejemplo.</p>
+    <div class="message">⚠️ Evita la calle inundada.</div>
+    <div class="alert-map">⚠️　 🌊　 ⚠️</div>
+    <button class="light" data-go="ruta">Ver ruta alternativa</button>
+  </div>
+</section>
+
+<section id="offline" class="screen">
+  <div class="offline">📵</div>
+  <h2>Modo sin internet</h2>
+  <p>Consulta la información guardada en tu dispositivo.</p>
+
+  <div class="card">
+    <p>🗺️ Mapas guardados</p>
+    <p>🏠 Puntos de ayuda</p>
+    <p>⚠️ Zonas de riesgo conocidas</p>
+    <p>🛣️ Rutas alternativas guardadas</p>
+  </div>
+
+  <div class="notice">
+    ℹ️ Sin conexión: podrás consultar información guardada, pero no recibirás nuevas alertas.
+  </div>
+</section>
+
+<section id="menu" class="screen">
+  <h2>☰ Menú</h2>
+
+  <div class="menu">
+    <button data-go="inicio">🏠 Inicio <span>›</span></button>
+    <button data-go="mapa">🔍 Buscar ruta <span>›</span></button>
+    <button data-go="alerta">🚨 Zonas de riesgo <span>›</span></button>
+    <button data-go="mapa">🏠 Puntos de ayuda <span>›</span></button>
+    <button data-go="offline">📵 Modo sin internet <span>›</span></button>
+  </div>
+
+  <div class="legend-card">
+    <b>Leyenda del mapa</b>
+    <p>🟢 Ruta segura</p>
+    <p>🔴 Zona de riesgo</p>
+    <p>🌊 Calle inundada</p>
+    <p>🏠 Punto de ayuda</p>
+  </div>
+</section>
+
+</main>
+
+<nav>
+  <button data-go="inicio">🏠<small>Inicio</small></button>
+  <button data-go="mapa">🗺️<small>Mapa</small></button>
+  <button data-go="alerta">🚨<small>Alertas</small></button>
+  <button data-go="offline">📵<small>Offline</small></button>
+  <button data-go="menu">☰<small>Menú</small></button>
+</nav>
+
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
